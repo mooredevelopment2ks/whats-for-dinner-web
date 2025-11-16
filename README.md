@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🍽️ What's For Dinner Web App
 
-## Getting Started
+A modern web application designed to help users quickly decide and search for local restaurants based on location and specific food criteria (e.g., "chicken," "burgers," "beef," or specific cuisines). Stop asking "What's for dinner?" and start finding delicious options!
 
-First, run the development server:
+## 🚀 Live Demo
+You can view a live version of the application here:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[![Deploy with Vercel](https://vercel.com/button)](https://whats-for-dinner-web.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This application is built around the core idea of simplifying the dinner decision process:
 
-## Learn More
+* **Location-Based Search:** Find restaurants near the user's current or specified geographic location.
+* **Criteria Filtering:** Filter results based on specific food items (e.g., **Burgers**, **Pizza**) or categories (**Beef**, **Seafood**).
+* **Decision-Making Tool:** A user-friendly interface to browse, filter, and choose from the generated list of dinner options.
+* **Modern UI/UX:** Built with Next.js for a fast and responsive user experience.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project leverages the latest web development stack for performance and maintainability.
 
-## Deploy on Vercel
+| Category | Technology | Description |
+| :--- | :--- | :--- |
+| **Framework** | **Next.js** (App Router) | React framework for server-side rendering and routing. |
+| **Language** | **JavaScript** | Primary language for logic and client-side interactions. |
+| **Styling** | **CSS** | Used for styling and layout. |
+| **API Integration** | *(External Service)* | Likely integrates with a location/restaurant API (e.g., Yelp, Google Places) to fetch data. |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
