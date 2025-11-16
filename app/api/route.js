@@ -1,7 +1,7 @@
 const options = {
   headers: {
     'accept': "application/json",
-    'Authorization': `fsq3 ${process.env.NEXT_PUBLIC_FSQR_KEY}`,
+    'Authorization': `${process.env.NEXT_PUBLIC_FSQR_KEY}`,
     'X-Places-Api-Version': '2025-02-05'
   }
 };
