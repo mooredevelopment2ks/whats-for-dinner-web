@@ -1,8 +1,8 @@
 const options = {
   headers: {
-    'accept': "application/json",
-    'Authorization': `${process.env.NEXT_PUBLIC_FSQR_KEY}`,
-    'X-Places-Api-Version': '2025-02-05'
+    "accept": "application/json",
+    "Authorization": `${process.env.NEXT_PUBLIC_FSQR_KEY}`,
+    "X-Places-Api-Version": "2025-02-05"
   }
 };
 
@@ -22,18 +22,61 @@ export async function GET(request) {
     searchParams.get("longitude"), 
     searchParams.get("category")
   );
+  console.log("--- DEBUG START ---");
+  console.log("URL SENT TO FOURSQUARE:", url);
   try{
     const apiResponse = await fetch(url, options);
+    const data = await apiResponse.json();
     if(!apiResponse.ok) {
-      const errorData = await apiResponse.json();
-      console.error(`Foursquare API Error (${apiResponse.status}):`, errorData);
-      return Response.json({ results: [], error: `API failed with status ${apiResponse.status}` }, { status: 200 });
+      console.error(`Foursquare API Error (${apiResponse.status}):`, data);
+      return new Response(
+        JSON.stringify({ results: [], error: `API failed with status ${apiResponse.status}` }),
+        {
+          status: apiResponse.status,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json"
+          }
+        }
+      );
+    } else {
+      console.log("Foursquare API Response Data:", data);
+      console.log("Foursquare Success Data (Full):", JSON.stringify(data, null, 2));
     }
-    const data = await apiResponse.json()
-    return Response.json(data)
-  } catch(error) {
-    console.error("Server-side fetching error:", error);
+    console.log("--- DEBUG END ---");
 
-    return Response.json({ results: [], error: 'Internal Server Error during fetch' }, { status: 500 });
+    return new Response(
+      JSON.stringify(data),
+      {
+        status: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json"
+        }
+      }
+    );
+  } catch (error) {
+    console.error("Server-side fetching error:", error);
+    return new Response(
+      JSON.stringify({ results: [], error: 'Internal Server Error during fetch' }),
+      {
+        status: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json"
+        }
+      }
+    );
   }
+}
+
+export async function OPTIONS(request) {
+  return new Response(null, {
+    status: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Authorization, X-Places-Api-Version, Content-Type, Accept",
+    }
+  });
 }
