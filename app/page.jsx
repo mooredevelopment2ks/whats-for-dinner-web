@@ -11,7 +11,6 @@ import End from "./components/end";
 export default function HomePage() {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [location, setLocation] = useState(false);
   const [category, setCategory] = useState(null);
   const [dinnerPlaces, setDinnerPlaces] = useState([]);
   const [index, setIndex] = useState(0);
@@ -32,7 +31,6 @@ export default function HomePage() {
   const handleLocationUpdate = (latitude, longitude) => {
     setLatitude(latitude);
     setLongitude(longitude);
-    setLocation({ latitude, longitude });
   };
 
   const handleCategoryUpdate = (category) => {
@@ -49,8 +47,8 @@ export default function HomePage() {
 
   return (
     <>
-      {!location && <Location onLocationUpdate={handleLocationUpdate} />}
-      {location && !category && (
+      {!latitude && <Location onLocationUpdate={handleLocationUpdate} />}
+      {latitude && !category && (
         <>
           <Categories onCategoryUpdate={handleCategoryUpdate} />
         </>

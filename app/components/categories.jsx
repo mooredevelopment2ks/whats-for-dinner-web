@@ -21,7 +21,7 @@ export default function Categories({ onCategoryUpdate }) {
     {
       name: "Burgers",
       className: "cards",
-      code: "13031",
+      code: "4bf58dd8d48988d16c941735",
       src: hamburger,
       width: 100,
       alt: "hamburger",
@@ -29,7 +29,7 @@ export default function Categories({ onCategoryUpdate }) {
     {
       name: "Chicken",
       className: "cards",
-      code: "13055",
+      code: "4d4ae6fc7a7b7dea34424761",
       src: chicken,
       width: 100,
       alt: "chicken",
@@ -37,7 +37,7 @@ export default function Categories({ onCategoryUpdate }) {
     {
       name: "Pizza",
       className: "cards",
-      code: "13064",
+      code: "4bf58dd8d48988d1ca941735",
       src: pizza,
       width: 100,
       alt: "pizza",
@@ -45,7 +45,7 @@ export default function Categories({ onCategoryUpdate }) {
     {
       name: "Chinese",
       className: "cards",
-      code: "13099",
+      code: "4bf58dd8d48988d145941735",
       src: chinese,
       width: 100,
       alt: "chinese",
@@ -53,7 +53,7 @@ export default function Categories({ onCategoryUpdate }) {
     {
       name: "Pubs",
       className: "cards",
-      code: "13018",
+      code: "4bf58dd8d48988d11b941735",
       src: pub,
       width: 100,
       alt: "pubs",
@@ -61,7 +61,7 @@ export default function Categories({ onCategoryUpdate }) {
     {
       name: "Sushi",
       className: "cards",
-      code: "13276",
+      code: "4bf58dd8d48988d1d2941735",
       src: sushi,
       width: 100,
       alt: "sushi",
@@ -69,7 +69,7 @@ export default function Categories({ onCategoryUpdate }) {
     {
       name: "Korean",
       className: "cards",
-      code: "13289",
+      code: "4bf58dd8d48988d113941735",
       src: korean,
       width: 100,
       alt: "korean",
@@ -77,7 +77,7 @@ export default function Categories({ onCategoryUpdate }) {
     {
       name: "Random",
       className: "cards",
-      code: "13000",
+      code: "4bf58dd8d48988d16e941735",
       src: random,
       width: 100,
       alt: "random",
