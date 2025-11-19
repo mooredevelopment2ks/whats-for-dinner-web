@@ -20,8 +20,13 @@ export default function Results({ place, handleTryAgain }) {
         <div className="marquee">
           <p>{place.name}</p>
           {imgURL ? (
-            //For some reason I get an error when using the Image component here (handled runtime error)
-            <img className="rimg" src={imgURL} alt={place.name} />
+            <Image
+              className="rimg"
+              src={imgURL}
+              width={200}
+              height={200}
+              alt={place.name}
+            />
           ) : (
             <Image
               src={placeholder}

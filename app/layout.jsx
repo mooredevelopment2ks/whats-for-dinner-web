@@ -24,11 +24,11 @@ export default function RootLayout({ children }) {
         baseTheme: [neobrutalism],
       }}
     >
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning={true}>
         <body>
           <SignedOut>
             <div className="container">
-              <SignIn routing="hash" id="auth-card" />
+              <SignIn routing="hash" id="auth-card" fallbackRedirectUrl="/" />
               <section id="logo">
                 <Image src={logo} width={700} alt="logo" id="logo" />
               </section>
